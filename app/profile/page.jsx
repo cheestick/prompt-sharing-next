@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
-import { useRouter, useSelectedLayoutSegments } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 import Profile from '@components/profile'
 
@@ -18,7 +18,7 @@ const MyProfile = () => {
     }
 
     if (session?.user.id) fetchPosts()
-  }, [])
+  }, [session?.user.id])
 
   const handleEdit = () => {}
 
